@@ -1,0 +1,17 @@
+
+{% extends 'main.html' %}
+
+{% block content  %}
+<form class="form" action='#' method="POST">
+    {% csrf_token %}
+    {% for field in forms %}
+    <div class="form__field">
+    {{field.label}} 
+        {{field}}
+    </div>
+                               
+  {% endfor %}
+    <input class="btn btn--sub btn--lg" type="submit" value="Add Review" />
+</form>
+
+{% endblock content %}

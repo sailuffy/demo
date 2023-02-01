@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="vedio" style="background-color:black">
+  <hr>
+{% for project in projects %}
+
+{% if project.vedio%}
+<!-- <h2 style="color: aqua;">By {{project.owner}}</h2> -->
+<h1 style="color: red;">{{project.title}}</h1>
+<video width="900px;" height="500" poster="{{project.image_url}}" controls>
+  
+    <source  src="{{project.vedio.url}}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+  {% endif %}
+
+{% endfor %}
+
+</div>
+{% endblock content%}
